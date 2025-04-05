@@ -80,11 +80,11 @@ const TestimonialsSection = () => {
     : testimonials;
 
   return (
-    <div className="bg-[#F5FAFE] sm:bg-white py-10 sm:py-14">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-6 sm:mb-8 md:mb-8">
-          <h2 className=" font-roboto text-xl sm:text-2xl md:text-4xl font-semibold text-[#231F20]  leading-[33.6px] tracking-normal">Patient Testimonials</h2>
-          <p className="font-roboto text-sm sm:text-[13px] font-light md:text-xl text-[#231F20] leading-[33.6px] tracking-normal mt-1">Accredited and recognized expertise.</p>
+    <div className="bg-[#F5FAFE] sm:bg-white py-10 sm:py-14 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto">
+        <div className="mb-6 sm:mb-8 md:mb-8 text-left">
+          <h2 className="font-roboto text-xl sm:text-2xl md:text-4xl font-semibold text-[#231F20] leading-[33.6px] tracking-normal">Patient Testimonials</h2>
+          <p className="font-roboto text-sm sm:text-[13px] md:text-xl font-light text-[#231F20] leading-[25px] tracking-normal mt-1">Accredited and recognized expertise.</p>
         </div>
         
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-4 md:gap-6">
