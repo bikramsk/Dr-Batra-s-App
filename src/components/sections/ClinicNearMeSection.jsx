@@ -15,10 +15,21 @@ const SearchIcon = () => (
   </svg>
 );
 
-
 const StarIconFilled = () => (
-    <svg width="16" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg width="16" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M8.49036 12.9111L3.86136 15.3448L4.74561 10.1901L0.995605 6.53985L6.17061 5.78985L8.48511 1.1001L10.7996 5.78985L15.9746 6.53985L12.2246 10.1901L13.1089 15.3448L8.49036 12.9111Z" fill="#FFB800" stroke="#FFB800" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+const LeftArrowIcon = () => (
+  <svg width="21" height="42" viewBox="0 0 21 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path opacity="0.75" d="M19.7706 39.5807L8.8926 21.2687L19.7706 2.95665H11.4126L0.828596 21.2687L11.4546 39.5807H19.7706Z" fill="#BDD8EF"/>
+  </svg>
+);
+
+const RightArrowIcon = () => (
+  <svg width="21" height="42" viewBox="0 0 21 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path opacity="0.75" d="M1.2294 39.5807L12.1074 21.2687L1.2294 2.95665H9.5874L20.1714 21.2687L9.5454 39.5807H1.2294Z" fill="#BDD8EF"/>
   </svg>
 );
 
@@ -49,26 +60,9 @@ const LocationPinIcon = () => (
 );
 
 
-const LeftArrowIcon = () => (
-    <svg width="21" height="42" viewBox="0 0 21 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path opacity="0.75" d="M19.7706 39.5807L8.8926 21.2687L19.7706 2.95665H11.4126L0.828596 21.2687L11.4546 39.5807H19.7706Z" fill="#BDD8EF"/>
-  </svg>
-    
-);
-
-
-const RightArrowIcon = () => (
-<svg width="21" height="42" viewBox="0 0 21 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path opacity="0.75" d="M1.2294 39.5807L12.1074 21.2687L1.2294 2.95665H9.5874L20.1714 21.2687L9.5454 39.5807H1.2294Z" fill="#BDD8EF"/>
-  </svg>
-
-);
-
 // --- Reusable Components ---
-
-
 const ClinicSearchBar = ({ onSearch }) => (
-  <div className="w-[564px] mx-auto mb-8 lg:mb-12">
+  <div className="w-full max-w-[564px] mx-auto mb-8 lg:mb-12">
     <div className="relative">
       <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none z-10">
         <SearchIcon />
@@ -79,31 +73,27 @@ const ClinicSearchBar = ({ onSearch }) => (
         className="block w-full bg-white border border-[#DEE2E6] border-solid backdrop-blur-[29px] rounded-full py-3 pl-12 pr-4 text-sm font-roboto text-[#231F20] placeholder-[#231F20] focus:outline-none focus:ring-2 focus:ring-[#DEE2E6] focus:border-transparent"
         onChange={(e) => onSearch(e.target.value)}
       />
-     
     </div>
   </div>
 );
 
-
 const ClinicCard = ({ clinic, onBookConsultation }) => (
-  
   <div className="bg-[white] rounded-lg border border-[#DEE2E6] border-solid p-2 w-82 flex-shrink-0 h-full flex flex-col overflow-hidden">
-  
     <div className="flex justify-between items-center px-4 pt-4 pb-2 flex-shrink-0">
-      <h4 className="font-semibold text-[#231F20] text-lg font-poppins leading-relaxed tracking-normal">{clinic.Headline}</h4>
+      <h4 className="font-semibold text-[#231F20] text-base sm:text-lg font-poppins leading-relaxed tracking-normal">{clinic.Headline}</h4>
       <div className="flex items-center justify-center gap-1 px-2 py-1">
         <StarIconFilled />
-        <span className="text-base text-[#231F20] font-roboto font-semibold leading-[16px] tracking-normal">{clinic.Ratings.toFixed(1)}</span>
+        <span className="text-sm sm:text-base text-[#231F20] font-roboto font-semibold leading-[16px] tracking-normal">{clinic.Ratings.toFixed(1)}</span>
       </div>
     </div>
 
     <div className="border-t border-solid border-[1px] border-[#DEE2E6] mx-4 my-2"></div>
 
     <div className="flex items-start gap-2 px-4 pb-4 flex-grow min-h-[70px]">
-      <div className="flex-shrink-0 mt-0.5 ">
-      <LocationPinIcon />
+      <div className="flex-shrink-0 mt-0.5">
+        <LocationPinIcon />
       </div>
-      <p className="font-poppins text-[#231F20] leading-relaxed font-normal text-sm tracking-normal">{clinic.Address}</p>
+      <p className="font-poppins text-[#231F20] leading-relaxed font-normal text-xs sm:text-sm tracking-normal">{clinic.Address}</p>
     </div>
 
     <div className="border-t border-solid border-[1px] border-[#DEE2E6] mx-4 my-2"></div>
@@ -111,19 +101,16 @@ const ClinicCard = ({ clinic, onBookConsultation }) => (
     {/* Card Bottom Section */}
     <div className="mt-auto flex-shrink-0">
       <button 
-        className="block w-full bg-[#231F20] hover:bg-opacity-90 transition-all duration-200 text-white text-sm font-poppins font-bold py-2.5 text-center"
+        className="block w-full bg-[#231F20] hover:bg-opacity-90 transition-all duration-200 text-white text-xs sm:text-sm font-poppins font-bold py-2 sm:py-2.5 text-center"
         onClick={onBookConsultation}
       >
         Book Consultation
       </button>
-     
     </div>
   </div>
 );
 
-
 // --- Main Section Component ---
-
 const ClinicNearMeSection = () => {
   const [allClinics, setAllClinics] = useState([]);
   const [filteredClinics, setFilteredClinics] = useState([]);
@@ -137,7 +124,6 @@ const ClinicNearMeSection = () => {
   // Load data from JSON when component mounts
   useEffect(() => {
     try {
-      
       setAllClinics(clinicsData);
       setFilteredClinics(clinicsData);
     } catch (error) {
@@ -147,12 +133,10 @@ const ClinicNearMeSection = () => {
     }
   }, []);
 
- 
   const handleSearch = (query) => {
     setSearchQuery(query);
     
     if (!query.trim()) {
-      
       setFilteredClinics(allClinics);
       setCurrentIndex(0);
       return;
@@ -187,7 +171,6 @@ const ClinicNearMeSection = () => {
     return 1; 
   };
   
-
   const getCardSlidePercentage = () => {
     const cardsPerSlide = getCardsPerSlide();
     return 100 / cardsPerSlide;
@@ -200,10 +183,10 @@ const ClinicNearMeSection = () => {
     setIsTransitioning(true);
     
     setTimeout(() => {
-     setCurrentIndex((prevIndex) => {
+      setCurrentIndex((prevIndex) => {
         const newIndex = prevIndex === 0 ? filteredClinics.length - getCardsPerSlide() : prevIndex - 1;
         return newIndex >= 0 ? newIndex : 0;
-     });
+      });
       
       setTimeout(() => {
         setIsTransitioning(false);
@@ -218,7 +201,7 @@ const ClinicNearMeSection = () => {
     setIsTransitioning(true);
     
     setTimeout(() => {
-     setCurrentIndex((prevIndex) => {
+      setCurrentIndex((prevIndex) => {
         const maxIndex = filteredClinics.length - getCardsPerSlide();
         const newIndex = prevIndex >= maxIndex ? 0 : prevIndex + 1;
         return newIndex;
@@ -237,10 +220,15 @@ const ClinicNearMeSection = () => {
     </div>
   );
 
+  // Function to determine if within target responsive range
+  const isTabletView = () => {
+    return windowWidth >= 640 && windowWidth <= 768;
+  };
+
   return (
-    <div className="bg-[#F5FAFE] sm:bg-white py-4 sm:py-16"> 
+    <div className="bg-[#F5FAFE] sm:bg-white py-4 sm:py-12 md:py-16"> 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/*  Header - desktop */}
+        {/* Header - desktop */}
         <div className="text-center mb-6 lg:mb-8 font-poppins hidden md:block"> 
           <h2 className="mx-auto text-2xl sm:text-4xl font-bold text-[#231F20] mb-1 leading-[43.4px] tracking-[0%]">
             Dr Batra's Clinic Near Me
@@ -255,9 +243,30 @@ const ClinicNearMeSection = () => {
           <ClinicSearchBar onSearch={handleSearch} />
         </div>
 
+        {/* Tablet Search Bar - Only visible between sm and md breakpoints */}
+        <div className="hidden sm:block md:hidden">
+          <div className="text-center mb-4 sm:mb-6 font-poppins">
+            <h2 className="text-xl sm:text-2xl font-bold text-[#231F20] mb-1">Dr Batra's Clinic Near Me</h2>
+            <p className="text-sm text-[#231F20] font-light">Easy Access to Our Clinic</p>
+          </div>
+          <div className="w-full max-w-md mx-auto mb-6 sm:mb-8">
+            <div className="relative">
+              <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none z-10">
+                <SearchIcon />
+              </div>
+              <input
+                type="text"
+                placeholder="Search by city, area or address" 
+                className="block w-full bg-white border border-[#DEE2E6] border-solid backdrop-blur-[29px] rounded-full py-2.5 sm:py-3 pl-12 pr-4 text-sm font-roboto text-[#231F20] placeholder-[#231F20] focus:outline-none focus:ring-2 focus:ring-[#DEE2E6] focus:border-transparent"
+                onChange={(e) => handleSearch(e.target.value)}
+                value={searchQuery}
+              />
+            </div>
+          </div>
+        </div>
+
         {/* Mobile View */}
-        <div className="block sm:hidden mx-auto max-w-sm mb-6 ">
-          
+        <div className="block sm:hidden mx-auto max-w-sm mb-6">
           <div className="text-center mb-6">
             <h2 className="text-xl font-bold text-[#231F20] mb-1">Dr Batra's Clinic's</h2>
             <p className="text-sm text-[#4D4D4D]">Easy Access to Our Clinic</p>
@@ -265,7 +274,7 @@ const ClinicNearMeSection = () => {
           
           {/* Mobile Search Bar */}
           <div className="w-full mb-6">
-        <div className="relative">
+            <div className="relative">
               <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none z-10">
                 <SearchIcon />
               </div>
@@ -281,7 +290,7 @@ const ClinicNearMeSection = () => {
           
           {/* Mobile Card  */}
           {filteredClinics.length > 0 ? (
-            <div className="mb-4 ">
+            <div className="mb-4">
               <div className="bg-white rounded-lg border border-[#DEE2E6] border-solid p-2 flex flex-col overflow-hidden">
                 <div className="flex justify-between items-center px-4 pt-4 pb-2">
                   <h4 className="font-semibold text-[#231F20] text-lg font-poppins leading-relaxed tracking-normal">{filteredClinics[currentIndex].Headline}</h4>
@@ -318,7 +327,7 @@ const ClinicNearMeSection = () => {
           
           {/* Pagination Dots - only on mobile */}
           {filteredClinics.length > 0 && (
-            <div className="flex justify-center mt-6 gap-2 block sm:hidden">
+            <div className="flex justify-center mt-6 gap-2 sm:hidden">
               {filteredClinics.map((_, i) => (
                 <div 
                   key={i}
@@ -332,17 +341,19 @@ const ClinicNearMeSection = () => {
 
         {/* Tablet and Desktop Carousel */}
         <div className="hidden sm:block relative">
-           {/* Left Arrow */}
-           <button
+          {/* Left Arrow */}
+          <button
             onClick={handlePrev}
-            className="absolute top-1/2 left-[-20px] lg:left-[-40px] transform -translate-y-1/2 z-20 rounded-full flex items-center justify-center text-blue-600 hover:text-blue-800 transition-colors duration-200 filter drop-shadow-md"
+            className={`absolute top-1/2 transform -translate-y-1/2 z-20 rounded-full flex items-center justify-center text-blue-600 hover:text-blue-800 transition-colors duration-200 filter drop-shadow-md ${
+              isTabletView() ? 'left-[-12px]' : 'sm:left-[-22px] lg:left-[-40px]'
+            }`}
             aria-label="Previous clinics"
             disabled={filteredClinics.length === 0}
           >
             <LeftArrowIcon />
           </button>
 
-          {/* Google-style review carousel */}
+          {/* carousel */}
           <div className="overflow-hidden">
             {filteredClinics.length > 0 ? (
               <div 
@@ -356,7 +367,7 @@ const ClinicNearMeSection = () => {
                 style={{
                   transform: `translateX(-${currentIndex * getCardSlidePercentage()}%)`,
                   padding: '0.5rem 0',
-                  gap: '1rem'
+                  gap: isTabletView() ? '0.75rem' : '1rem'
                 }}
               >
                 {/* Render all clinic cards in a row */}
@@ -365,25 +376,24 @@ const ClinicNearMeSection = () => {
                     key={clinic.id} 
                     className={`${
                       getCardsPerSlide() === 3 ? 'w-[calc(33.333%-0.67rem)]' : 
-                      getCardsPerSlide() === 2 ? 'w-[calc(50%-0.5rem)]' : 
-                      'w-full'
+                      isTabletView() ? 'w-[calc(50%-0.375rem)]' : 'w-[calc(50%-0.5rem)]'
                     } flex-shrink-0`}
                   >
-                   <ClinicCard
+                    <ClinicCard
                       clinic={clinic}
                       onBookConsultation={() => setIsBookingModalOpen(true)}
-                  />
-                </div>
-              ))}
-            </div>
+                    />
+                  </div>
+                ))}
+              </div>
             ) : (
               <NoResultsMessage />
             )}
           </div>
 
-          {/* pagination dots */}
+          {/* pagination dots - show on tablet views */}
           {filteredClinics.length > 0 && (
-            <div className="flex justify-center mt-20 gap-2 sm:flex md:hidden">
+            <div className={`flex justify-center gap-2 ${isTabletView() ? 'mt-10' : 'mt-20'} sm:flex md:hidden`}>
               {filteredClinics.slice(0, filteredClinics.length - getCardsPerSlide() + 1).map((_, i) => (
                 <div 
                   key={i}
@@ -402,7 +412,9 @@ const ClinicNearMeSection = () => {
           {/* Right Arrow */}
           <button
             onClick={handleNext}
-            className="absolute top-1/2 right-[-20px] lg:right-[-40px] transform -translate-y-1/2 z-20 rounded-full flex items-center justify-center text-blue-600 hover:text-blue-800 transition-colors duration-200 filter drop-shadow-md"
+            className={`absolute top-1/2 transform -translate-y-1/2 z-20 rounded-full flex items-center justify-center text-blue-600 hover:text-blue-800 transition-colors duration-200 filter drop-shadow-md ${
+              isTabletView() ? 'right-[-12px]' : 'sm:right-[-22px] lg:right-[-40px]'
+            }`}
             aria-label="Next clinics"
             disabled={filteredClinics.length === 0}
           >
@@ -416,10 +428,29 @@ const ClinicNearMeSection = () => {
           onClose={() => setIsBookingModalOpen(false)}
         />
         
-   
         <style dangerouslySetInnerHTML={{ __html: `
           .duration-300 {
             transition-duration: 300ms;
+          }
+          
+          /* Tablet-specific styles for 640-768px */
+          @media (min-width: 640px) and (max-width: 768px) {
+            .clinic-card-tablet {
+              padding: 0.75rem !important;
+            }
+            
+            .clinic-headline-tablet {
+              font-size: 0.95rem !important;
+            }
+            
+            .clinic-address-tablet {
+              font-size: 0.8rem !important;
+            }
+            
+            .clinic-button-tablet {
+              padding: 0.5rem 0 !important;
+              font-size: 0.8rem !important;
+            }
           }
         `}} />
       </div>
