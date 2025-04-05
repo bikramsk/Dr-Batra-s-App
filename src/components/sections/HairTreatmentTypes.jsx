@@ -42,9 +42,16 @@ const HairTreatmentServices = () => {
   };
   
   return (
-    <div className="bg-[#F5FAFE] sm:bg-white  py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
+    <div className="bg-[#F5FAFE] sm:bg-white py-8 sm:py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Background SVG */}
+      <div className="absolute bottom-0 right-0 pointer-events-none z-0">
+        <svg width="175" height="178" viewBox="0 0 175 178" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3.50544 0.959534C20.8389 77.0107 23.4288 146.903 0.805664 221.307C20.9487 193.806 41.3754 164.813 66.7167 141.274C98.2994 111.961 136.087 88.7433 174.195 68.1976C87.6742 115.009 17.2331 65.5344 3.50544 0.959534Z" fill="#F5FAFE"/>
+        </svg>
+      </div>
+
       {/* Desktop View (1130px+ screens) */}
-      <div className="hidden xl:block max-w-6xl mx-auto">
+      <div className="hidden xl:block max-w-6xl mx-auto relative z-10">
         <div className="mb-4 sm:mb-6">
           <h1 className="text-2xl xl:text-4xl text-[#231F20] font-roboto font-semibold leading-[1.2] xl:leading-[33.6px] tracking-normal">Types of Hair Treatment We Provide</h1>
           <p className="text-[#231F20] w-full xl:w-94 h-5 sm:h-6 mt-2 font-roboto font-normal text-base xl:text-xl leading-[1.25] xl:leading-[25px] whitespace-nowrap">Personalized Solutions for Every Condition</p>
