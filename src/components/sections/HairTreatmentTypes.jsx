@@ -51,13 +51,17 @@ const HairTreatmentServices = () => {
         </div>
         
         <div className="w-full mb-6">
-          <div className="flex font-poppins font-poppins font-semibold text-base leading-none tracking-normal">
-            <div className="bg-black text-white px-4 py-2 w-1/2 text-center">
+          <div className="flex mb-6 sm:mb-8 font-poppins">
+            <button
+              className="flex-1 h-10 gap-2.5 py-2 px-3 rounded-t-sm font-normal sm:font-semibold text-xs sm:text-base leading-none bg-[#231F20] text-white"
+            >
               Treatment Detail
-            </div>
-            <div className="text-[#231F20] border-b border-[#231F20] w-1/2 px-4 py-2 font-normal text-center">
+            </button>
+            <button
+              className="flex-1 h-10 gap-2.5 py-2 px-3 rounded-t-sm font-normal sm:font-semibold text-xs sm:text-base leading-none text-[#231F20] border-b-2 border-[#231F20]"
+            >
               Treatment Approach
-            </div>
+            </button>
           </div>
         </div>
         
@@ -75,7 +79,7 @@ const HairTreatmentServices = () => {
         </div>
       </div>
 
-      {/* Desktop View (1024px-1130px screens) */}
+      {/* Desktop */}
       <div className="hidden lg:block xl:hidden max-w-6xl mx-auto">
         <div className="mb-4 sm:mb-6">
           <h1 className="text-2xl text-[#231F20] font-roboto font-semibold leading-[1.2] tracking-normal">Types of Hair Treatment We Provide</h1>
@@ -83,13 +87,17 @@ const HairTreatmentServices = () => {
         </div>
         
         <div className="w-full mb-6">
-          <div className="flex font-poppins font-poppins font-semibold text-base leading-none tracking-normal">
-            <div className="bg-black text-white px-4 py-2 w-1/2 text-center">
+          <div className="flex mb-6 sm:mb-8 font-poppins">
+            <button
+              className="flex-1 h-10 gap-2.5 py-2 px-3 rounded-t-sm font-normal sm:font-semibold text-xs sm:text-base leading-none bg-[#231F20] text-white"
+            >
               Treatment Detail
-            </div>
-            <div className="text-[#231F20] border-b border-[#231F20] w-1/2 px-4 py-2 font-normal text-center">
+            </button>
+            <button
+              className="flex-1 h-10 gap-2.5 py-2 px-3 rounded-t-sm font-normal sm:font-semibold text-xs sm:text-base leading-none text-[#231F20] border-b-2 border-[#231F20]"
+            >
               Treatment Approach
-            </div>
+            </button>
           </div>
         </div>
         
@@ -107,7 +115,7 @@ const HairTreatmentServices = () => {
         </div>
       </div>
 
-      {/* Tablet View (768px-1024px) */}
+      {/* Tablet  */}
       <div className="hidden md:block lg:hidden max-w-6xl mx-auto">
         <div className="mb-4 sm:mb-6">
           <h1 className="text-2xl text-[#231F20] font-roboto font-semibold leading-[1.2] tracking-normal">Types of Hair Treatment We Provide</h1>
@@ -115,13 +123,17 @@ const HairTreatmentServices = () => {
         </div>
         
         <div className="w-full mb-6">
-          <div className="flex font-poppins font-semibold text-base leading-none tracking-normal">
-            <div className="bg-black text-white px-4 py-2 w-1/2 text-center">
+          <div className="flex mb-6 sm:mb-8 font-poppins">
+            <button
+              className="flex-1 h-10 gap-2.5 py-2 px-3 rounded-t-sm font-normal sm:font-semibold text-xs sm:text-base leading-none bg-[#231F20] text-white"
+            >
               Treatment Detail
-            </div>
-            <div className="text-[#231F20] border-b border-[#231F20] w-1/2 px-4 py-2 font-normal text-center">
+            </button>
+            <button
+              className="flex-1 h-10 gap-2.5 py-2 px-3 rounded-t-sm font-normal sm:font-semibold text-xs sm:text-base leading-none text-[#231F20] border-b-2 border-[#231F20]"
+            >
               Treatment Approach
-            </div>
+            </button>
           </div>
         </div>
         
@@ -131,8 +143,8 @@ const HairTreatmentServices = () => {
               <span className="text-[#1167B1] mr-2 flex-shrink-0">
                 <svg width="28" height="28" viewBox="0 0 22 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M0.737102 0.170799C2.85502 9.46323 3.17147 18.0031 0.407227 27.0942C2.86843 23.734 5.36431 20.1915 8.46066 17.3154C12.3196 13.7337 16.9368 10.8968 21.5931 8.38638C11.0214 14.1061 2.41444 8.06098 0.737102 0.170799Z" fill="currentColor"/>
-</svg>
-</span>
+                </svg>
+              </span>
               <p className="text-sm md:text-base font-roboto font-normal leading-tight md:leading-[22px] tracking-normal text-[#231F20]">{treatment}</p>
             </div>
           ))}
@@ -146,15 +158,23 @@ const HairTreatmentServices = () => {
         </div>
         
         {/* Tabs */}
-        <div className="flex bg-gray-100 rounded-lg mb-4">
+        <div className="flex mb-6 sm:mb-8 font-poppins">
           <button 
-            className={`py-2 px-3 text-xs flex-1 rounded-lg ${activeTab === 0 ? 'bg-black text-white shadow' : ''}`}
+            className={`flex-1 h-10 gap-2.5 py-2 px-3 rounded-t-sm font-normal sm:font-semibold text-xs sm:text-base leading-none ${
+              activeTab === 0 
+                ? 'bg-[#231F20] text-white' 
+                : 'text-[#231F20] border-b-2 border-[#231F20]'
+            }`}
             onClick={() => setActiveTab(0)}
           >
             Types of Hairfall
           </button>
           <button 
-            className={`py-2 px-3 text-xs flex-1 rounded-lg ${activeTab === 1 ? 'bg-white shadow' : ''}`}
+            className={`flex-1 h-10 gap-2.5 py-2 px-3 rounded-t-sm font-normal sm:font-semibold text-xs sm:text-base leading-none ${
+              activeTab === 1 
+                ? 'bg-[#231F20] text-white' 
+                : 'text-[#231F20] border-b-2 border-[#231F20]'
+            }`}
             onClick={() => setActiveTab(1)}
           >
             Types of Hair Treatment
@@ -168,8 +188,8 @@ const HairTreatmentServices = () => {
               <span className="text-[#1167B1] mr-3">
                 <svg width="22" height="28" viewBox="0 0 22 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M0.737102 0.170799C2.85502 9.46323 3.17147 18.0031 0.407227 27.0942C2.86843 23.734 5.36431 20.1915 8.46066 17.3154C12.3196 13.7337 16.9368 10.8968 21.5931 8.38638C11.0214 14.1061 2.41444 8.06098 0.737102 0.170799Z" fill="currentColor"/>
-</svg>
-</span>
+                </svg>
+              </span>
               <p className="text-sm">{treatment}</p>
             </div>
           ))}

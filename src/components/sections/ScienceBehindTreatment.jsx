@@ -24,22 +24,22 @@ const ScienceBehindTreatment = () => {
     {
       image: '/01-homeopathy.png',
       title: 'Microscopic test',
-      description: 'Our experts diagnose the texture of your scalp with a microscopic examination to understand the underlying cause of your hair loss.'
+      description: 'Our doctors go beyond the surface of your scalp with a microscopic examination to understand the exact root cause of your hair loss'
     },
     {
       image: '/02-homeopathy.png',
       title: '30 to 40 minutes detailed consultation',
-      description: 'At Batra\'s, our treatment style starts with an initial hair test followed by a detailed consultation with guide us in adopting the most suitable methodology.'
+      description: 'To thoroughly understand your case and reason for hair loss, a detailed consultation will guide us in offering a safe and effective solution'
     },
     {
       image: '/03-homeopathy.png',
       title: 'Measuring your result',
-      description: 'Monthly monitoring of hair regrowth progress, addressing root cause for lasting improvements.'
+      description: 'Monthly monitoring of hair regrowth progress, addressing root cause for lasting improvements'
     },
     {
       image: '/04-homeopathy.png',
       title: 'Personalized hair treatment',
-      description: 'Plan a comprehensive measurement and diagnose and customize a treatment plan combining homeopathy and aesthetics for quicker, visible results tailored to your hair loss stage.'
+      description: 'After a comprehensive assessment, our doctors will customize a treatment plan combining homeopathy and aesthetics for quicker, visible results tailored to your hair loss stage'
     }
   ];
 
@@ -62,9 +62,9 @@ const ScienceBehindTreatment = () => {
         {/* Tabs */}
         <div className="flex mb-6 sm:mb-8 font-poppins">
           <button
-            className={`flex-1 py-2.5 sm:py-3 text-center text-sm sm:text-base font-medium ${
+            className={`flex-1 h-10 gap-2.5 py-2 px-3 rounded-t-sm font-normal sm:font-semibold text-xs sm:text-base leading-none ${
               activeTab === 'how' 
-                ? 'bg-black text-white' 
+                ? 'bg-[#231F20] text-white' 
                 : 'e text-[#231F20] border-b-2 border-[#231F20]'
             }`}
             onClick={() => handleTabChange('how')}
@@ -72,9 +72,9 @@ const ScienceBehindTreatment = () => {
             How our Treatment works
           </button>
           <button
-            className={`flex-1 py-2.5 sm:py-3 text-center text-sm sm:text-base font-medium ${
+            className={`flex-1 h-10 gap-2.5 py-2 px-3 rounded-t-sm font-normal sm:font-semibold text-xs sm:text-base leading-none ${
               activeTab === 'approach' 
-                ? 'bg-black text-white' 
+                ? 'bg-[#231F20] text-white' 
                 : ' text-[#231F20] border-b-2 border-[#231F20]'
             }`}
             onClick={() => handleTabChange('approach')}
@@ -86,19 +86,17 @@ const ScienceBehindTreatment = () => {
         {/* Content */}
         <div className={`grid ${isMobile ? 'grid-cols-1 gap-4' : 'grid-cols-1 md:grid-cols-2 gap-6'}`}>
           {displayedContent.map((item, index) => (
-            <div key={index} className="bg-white p-4 sm:p-6 rounded-lg shadow-sm">
-              <div className="flex items-start">
-                <div className="flex-shrink-0 bg-gray-100 p-2 sm:p-3 rounded-full">
-                  <img src={item.image} alt={item.title} className="w-8 h-8 sm:w-10 sm:h-10" />
+            <div key={index} className="bg-white p-4 sm:p-6 rounded-lg shadow-sm h-auto min-h-[180px] md:min-h-[200px] lg:min-h-[180px]">
+              <div className="flex flex-col items-start text-left">
+                <div className="mb-3 sm:mb-4">
+                  <img src={item.image} alt={item.title} className="w-10 h-10 sm:w-12 sm:h-12" />
                 </div>
-                <div className="ml-3 sm:ml-4">
-                  <h3 className="font-semibold text-base sm:text-lg text-[#231F20]">{item.title}</h3>
-                  <p className="text-[#666666] text-sm mt-1 sm:mt-2">{item.description}</p>
-                </div>
+                <h3 className="font-poppins font-semibold text-sm sm:text-base text-[#231F20] leading-none mb-2">{item.title}</h3>
+                <p className="font-poppins text-[#8E8E93] text-xs font-normal leading-4 md:leading-[17px]">{item.description}</p>
               </div>
-            </div>
+                  </div>
           ))}
-        </div>
+              </div>
 
         {/* Pagination Dots */}
         {isMobile && (
@@ -113,8 +111,8 @@ const ScienceBehindTreatment = () => {
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}
-          </div>
-        )}
+              </div>
+          )}
       </div>
     </div>
   );

@@ -72,14 +72,14 @@ const AppointmentBooking = () => {
   };
 
   return (
-    <div className="sm:bg-[#F5FAFE] bg-white py-10 sm:py-16">
+    <div className="sm:bg-[#F5FAFE] bg-white py-10 sm:py-8">
       <div className=" bg-white shadow-md rounded-lg p-4 sm:p-8 max-w-6xl mx-4 sm:mx-auto my-6 sm:my-10 border font-roboto border-[#DEE2E6]">
         <div className="text-center mb-4 sm:mb-6">
-          <h2 className="text-lg sm:text-xl font-bold text-gray-800">
+          <h2 className="text-lg sm:text-xl font-bold text-[#231F20]">
             <span className="sm:hidden">Consult with hair our <span className="text-[#1167B1]">doctor</span></span>
-            <span className="hidden sm:inline">Book an Appointment with our <span className="text-[#1167B1]">Doctors</span></span>
+            <span className="hidden sm:inline text-4xl leading-[33.6px]">Book an Appointment with our <span className="text-[#1167B1]">Doctors</span></span>
           </h2>
-          <p className="text-[#231F20] text-xs sm:text-sm mt-1">Unmatched Expertise & Results</p>
+          <p className="text-[#231F20] text-xs sm:text-base mt-1 font-light leading-[25px]">Unmatched Expertise & Results</p>
         </div>
         
         <form onSubmit={handleSubmit} className="max-w-2xl mx-auto">
@@ -91,7 +91,7 @@ const AppointmentBooking = () => {
                 placeholder="Enter Name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full text-[#B3B3B3] px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 text-sm sm:text-base"
+                className="w-full placeholder-[#B3B3B3] text-[#231F20] px-4 py-2 border border-[#DEE2E6] rounded-md focus:outline-none  text-sm sm:text-base"
               />
             </div>
             
@@ -102,7 +102,7 @@ const AppointmentBooking = () => {
                 placeholder="Enter Mobile Number"
                 value={formData.mobile}
                 onChange={handleChange}
-                className="w-full text-[#B3B3B3] px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 text-sm sm:text-base"
+                className="w-full placeholder-[#B3B3B3] text-[#231F20] px-4 py-2 border border-[#DEE2E6] rounded-md focus:outline-none  text-sm sm:text-base"
               />
             </div>
           </div>
@@ -115,10 +115,10 @@ const AppointmentBooking = () => {
                 type="checkbox"
                 checked={formData.termsAccepted}
                 onChange={handleChange}
-                className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-blue-500 focus:ring-1"
+                className="w-4 h-4 border-2 border-white bg-[#0C4679] rounded-xl "
               />
             </div>
-            <label htmlFor="terms" className="ml-2 text-xs sm:text-sm text-[#B3B3B3]">
+            <label htmlFor="terms" className="ml-2 text-xs sm:text-sm whitespace-nowrap text-[#B3B3B3]">
               I understand and accept the terms and conditions
             </label>
           </div>
@@ -127,7 +127,7 @@ const AppointmentBooking = () => {
           <div className="text-center">
             <button 
               type="submit"
-              className="bg-black text-white py-1 sm:py-2 px-2 sm:px-6 rounded-md uppercase text-[10px] sm:text-sm font-medium hover:bg-gray-800 transition duration-300 w-2/3 sm:w-auto mx-auto"
+              className="bg-[#231F20] text-white py-2.5 sm:py-2 px-2.5 sm:px-6 rounded-md uppercase text-[10px] sm:text-base shadow-[0px_4px_15px_0px_#AFADAD2E] font-semibold cursor-pointer w-2/3 sm:w-auto mx-auto"
             >
               BOOK YOUR APPOINTMENT
             </button>
