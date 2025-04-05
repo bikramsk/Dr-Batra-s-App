@@ -59,11 +59,11 @@ const StarRating = ({ rating }) => (
 
 
 const ReviewCard = ({ name, rating, text }) => (
-  <div className="bg-white rounded-lg shadow-md p-5 md:p-6 w-full flex-shrink-0 h-[180px] md:h-[200px] flex flex-col">
+  <div className="bg-white rounded-lg shadow-md p-4 sm:p-5 md:p-6 w-full flex-shrink-0 h-[180px] sm:h-[190px] md:h-[200px] flex flex-col">
     {/* Card Header */}
-    <div className="flex justify-between items-center mb-3">
+    <div className="flex justify-between items-center mb-2 sm:mb-3">
       <h4 className="font-semibold text-gray-800 text-xs sm:text-sm md:text-base">{name}</h4>
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-1 sm:gap-2">
         <GoogleGIcon />
         <StarRating rating={rating} />
       </div>
@@ -156,6 +156,7 @@ const GoogleReviewsSection = () => {
   
   const getCardWidth = () => {
     if (screenWidth < 640) return '100%';
+    if (screenWidth < 768) return 'calc(50% - 12px)';
     if (screenWidth < 1024) return '50%';
     return '33.333%';
   };
@@ -165,10 +166,10 @@ const GoogleReviewsSection = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-left mb-8 lg:mb-12 font-roboto">
-          <h2 className="text-2xl sm:text-4xl font-semibold leading-[33.6px] text-[#231F20] mb-1 sm:-ml-7 md:ml-7">
+          <h2 className="text-2xl sm:text-4xl font-semibold leading-[33.6px] text-[#231F20] mb-1 sm:ml-7 md:-ml-0 lg:ml-0 xl:ml-0">
             Live Google Reviews
           </h2>
-          <p className="text-sm sm:text-xl text-[#231F20] font-light leading-[25px] sm:-ml-7 md:ml-7">
+          <p className="text-sm sm:text-xl text-[#231F20] font-light leading-[25px] sm:ml-7 md:-ml-0 lg:ml-0 xl:ml-0">
             Dynamic ratings from real patients.
           </p>
         </div>
@@ -178,7 +179,7 @@ const GoogleReviewsSection = () => {
          
            <button
             onClick={handlePrev}
-            className="absolute top-1/2 left-[-36px] md:left-[-40px] transform -translate-y-1/2 z-10 rounded-full p-2 text-blue-600 hover:text-blue-800 transition-colors duration-200 hidden sm:block"
+            className="absolute top-1/2 left-[-30px] md:left-[-40px] transform -translate-y-1/2 z-10 rounded-full p-2 text-blue-600 hover:text-blue-800 transition-colors duration-200 hidden sm:block"
             aria-label="Previous reviews"
           >
             <LeftArrowIcon />
@@ -195,7 +196,7 @@ const GoogleReviewsSection = () => {
                   style={{ width: getCardWidth() }}
                   className="flex-shrink-0"
                 >
-                  <div className="px-2">
+                  <div className="px-1 sm:px-2">
                    <ReviewCard
                     name={review.name}
                     rating={review.rating}
@@ -209,7 +210,7 @@ const GoogleReviewsSection = () => {
         
           <button
             onClick={handleNext}
-            className="absolute top-1/2 right-[-36px] md:right-[-40px] transform -translate-y-1/2 z-10 rounded-full p-2 text-blue-600 hover:text-blue-800 transition-colors duration-200 hidden sm:block"
+            className="absolute top-1/2 right-[-30px] md:right-[-40px] transform -translate-y-1/2 z-10 rounded-full p-2 text-blue-600 hover:text-blue-800 transition-colors duration-200 hidden sm:block"
             aria-label="Next reviews"
           >
             <RightArrowIcon />

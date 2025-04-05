@@ -87,7 +87,7 @@ const HairTreatmentServices = () => {
       </div>
 
       {/* Desktop */}
-      <div className="hidden lg:block xl:hidden max-w-6xl mx-auto">
+      <div className="hidden lg:block xl:hidden max-w-6xl mx-auto relative z-10">
         <div className="mb-4 sm:mb-6">
           <h1 className="text-2xl text-[#231F20] font-roboto font-semibold leading-[1.2] tracking-normal">Types of Hair Treatment We Provide</h1>
           <p className="text-[#231F20] w-full h-5 sm:h-6 mt-2 font-roboto font-normal text-base leading-[1.25] whitespace-nowrap">Personalized Solutions for Every Condition</p>
@@ -123,7 +123,7 @@ const HairTreatmentServices = () => {
       </div>
 
       {/* Tablet  */}
-      <div className="hidden md:block lg:hidden max-w-6xl mx-auto">
+      <div className="hidden md:block lg:hidden max-w-6xl mx-auto relative z-10">
         <div className="mb-4 sm:mb-6">
           <h1 className="text-2xl text-[#231F20] font-roboto font-semibold leading-[1.2] tracking-normal">Types of Hair Treatment We Provide</h1>
           <p className="text-[#231F20] w-full h-5 sm:h-6 mt-2 font-roboto font-normal text-base leading-[1.25] whitespace-nowrap">Personalized Solutions for Every Condition</p>
@@ -159,7 +159,7 @@ const HairTreatmentServices = () => {
       </div>
       
       {/* Mobile View */}
-      <div className="md:hidden max-w-6xl mx-auto">
+      <div className="md:hidden max-w-6xl mx-auto relative z-10">
         <div className="mb-6">
           <h1 className="font-roboto text-xl font-bold text-[#231F20]">Types of Hair Treatment We Provide</h1>
         </div>
