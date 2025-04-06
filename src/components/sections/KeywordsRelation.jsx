@@ -16,7 +16,7 @@ const KeywordsRelation = () => {
 
         {/* Mobile  */}
         <div className="sm:hidden mb-6">
-          <h2 className="font-poppins font-semibold text-lg leading-none tracking-normal">
+          <h2 className="font-poppins font-semibold text-lg leading-6 tracking-normal">
             Why Choose Dr Batra's for hair treatment?
           </h2>
         </div>

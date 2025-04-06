@@ -127,7 +127,7 @@ const AppointmentBooking = () => {
           <div className="text-center">
             <button 
               type="submit"
-              className="bg-[#231F20] text-white py-2.5 sm:py-2 px-2.5 sm:px-6 rounded-md uppercase text-[10px] sm:text-base shadow-[0px_4px_15px_0px_#AFADAD2E] font-semibold cursor-pointer w-2/3 sm:w-auto mx-auto"
+              className="bg-[#231F20] dark:bg-[#231F20] text-white dark:text-white py-2.5 sm:py-2 px-2.5 sm:px-6 rounded-md uppercase text-[10px] sm:text-base shadow-[0px_4px_15px_0px_#AFADAD2E] font-semibold cursor-pointer w-2/3 sm:w-auto mx-auto"
             >
               BOOK YOUR APPOINTMENT
             </button>

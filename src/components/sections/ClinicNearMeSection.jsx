@@ -101,7 +101,7 @@ const ClinicCard = ({ clinic, onBookConsultation }) => (
     {/* Card Bottom Section */}
     <div className="mt-auto flex-shrink-0">
       <button 
-        className="block w-full bg-[#231F20] hover:bg-opacity-90 transition-all duration-200 text-white text-xs sm:text-sm font-poppins font-bold py-2 sm:py-2.5 text-center"
+        className="block w-full bg-[#231F20] dark:bg-[#231F20] hover:bg-opacity-90 transition-all duration-200 text-white dark:text-white text-xs sm:text-sm font-poppins font-bold py-2 sm:py-2.5 text-center"
         onClick={onBookConsultation}
       >
         Book Consultation
@@ -313,7 +313,7 @@ const ClinicNearMeSection = () => {
                 
                 <div className="mt-auto">
                   <button 
-                    className="block w-full bg-[#231F20] hover:bg-opacity-90 transition-all duration-200 text-white text-sm font-poppins font-bold py-2.5 text-center"
+                    className="block w-full bg-[#231F20] dark:bg-[#231F20] hover:bg-opacity-90 transition-all duration-200 text-white dark:text-white text-sm font-poppins font-bold py-2.5 text-center"
                     onClick={() => setIsBookingModalOpen(true)}
                   >
                     Book Consultation

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 const BookingModal = ({ isOpen, onClose }) => {
-  // Prevent scrolling when modal is open
+ 
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -12,12 +12,12 @@ const BookingModal = ({ isOpen, onClose }) => {
     };
   }, [isOpen]);
   
-  // Simple dropdown state - only for UI effect
+  
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
-    // Auto close after a short delay
+   
     if (!isDropdownOpen) {
       setTimeout(() => {
         setIsDropdownOpen(false);
@@ -48,7 +48,7 @@ const BookingModal = ({ isOpen, onClose }) => {
         }}
         onClick={e => e.stopPropagation()}
       >
-        {/* Close button */}
+        {/* Close */}
         <div className="absolute -top-3 -right-2 z-[999]">
           <button 
             className="bg-[#C22727] rounded-full w-5 h-5 flex items-center justify-center transition-colors cursor-pointer"
@@ -61,7 +61,7 @@ const BookingModal = ({ isOpen, onClose }) => {
         </div>
         
         <div className="p-4">
-          <div className="w-88 h-17.5 bg-[#0C4679] -mx-4.5 -mt-5 mb-3 flex items-center justify-center">
+          <div className="w-88 h-17.5 bg-[#0C4679] dark:bg-[#0C4679] -mx-4.5 -mt-5 mb-3 flex items-center justify-center">
             <h2 className="text-center font-roboto font-medium text-xl text-white px-4 py-1">
               Book an Appointment with our<br/>experts now
             </h2>
@@ -77,7 +77,7 @@ const BookingModal = ({ isOpen, onClose }) => {
             <div className="flex gap-2 font-roboto">
               <div className="relative">
                 <div 
-                  className="flex items-center justify-between bg-white rounded-l px-2 text-[#231F20] border border-[#E4E4E7] min-w-[60px] h-8.5 text-sm cursor-pointer"
+                  className="flex items-center justify-between bg-white rounded-l px-2 text-[#231F20] border border-[#E4E4E7] min-w-[60px] h-9.5 text-sm cursor-pointer"
                   onClick={toggleDropdown}
                 >
                   <span>+91</span>
@@ -96,7 +96,7 @@ const BookingModal = ({ isOpen, onClose }) => {
                 {isDropdownOpen && (
                   <div className="absolute top-full left-0 mt-1 bg-white border border-[#E4E4E7] rounded shadow-lg z-10 w-[60px]">
                     <div 
-                      className="px-3 py-2 hover:bg-gray-100 cursor-pointer text-[#231F20] text-sm"
+                      className="px-3 py-1 hover:bg-gray-100 cursor-pointer text-[#231F20] text-sm"
                       onClick={toggleDropdown}
                     >
                       +91
@@ -120,7 +120,7 @@ const BookingModal = ({ isOpen, onClose }) => {
               <p className="text-xs font-medium text-[#B3B3B3]">I understand and accept the terms and conditions</p>
             </div>
             
-            <button className="w-full h-8 bg-[#0073AE] font-bold py-1 rounded text-white text-sm shadow-[0px_4px_15px_0px_#AFADAD2E] cursor-pointer">
+            <button className="w-full h-8 bg-[#0073AE] dark:bg-[#0C4679] font-bold py-1 rounded text-white dark:text-white text-sm shadow-[0px_4px_15px_0px_#AFADAD2E] cursor-pointer">
               Book your Appointment
             </button>
           </div>

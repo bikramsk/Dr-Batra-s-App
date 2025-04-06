@@ -139,7 +139,7 @@ const HairFallStages = () => {
         </div>
 
         <div className="flex justify-center sm:justify-end sm:mt-8">
-          <button className="bg-black text-white px-6 py-2 w-full sm:w-72 rounded-md shadow-[0px_4px_15px_0px_rgba(175,173,173,0.18)]">
+          <button className="bg-[#231F20] dark:bg-[#231F20] text-white dark:text-white px-6 py-2 w-full sm:w-72 rounded-md shadow-[0px_4px_15px_0px_rgba(175,173,173,0.18)]">
             Book your Consultation Now
           </button>
         </div>
