@@ -61,7 +61,7 @@ const BookingModal = ({ isOpen, onClose }) => {
         </div>
         
         <div className="p-4">
-          <div className="w-88 h-17.5 bg-[#0C4679] dark:bg-[#0C4679] -mx-4.5 -mt-5 mb-3 flex items-center justify-center">
+          <div className="w-88 h-17.5 bg-[#0C4679] -mx-4.5 -mt-5 mb-3 flex items-center justify-center">
             <h2 className="text-center font-roboto font-medium text-xl text-white px-4 py-1">
               Book an Appointment with our<br/>experts now
             </h2>

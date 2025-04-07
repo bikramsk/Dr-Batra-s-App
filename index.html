@@ -9,5 +9,61 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- Chatbot Scripts -->
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"
+    integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO"
+    crossorigin="anonymous"></script>
+    <script src="/assets/js/chatbot.js"></script>
+    <script>
+      const url = window.location.pathname
+      const params = new URLSearchParams(url);
+      console.log("params: ", url.replace(/^\/+|\/+$/g, ''))
+      let user = "";
+      let room_id = "";
+      const config = {
+        chatbot_num: "GCB-VGMCP13H", // multiparty chatbot number
+        host: "https://chatbot.qwick.ai", // Using the working host
+        embed: "IFRAME",
+        auto_open: false,
+      };
+  
+      const GcConv = new GpConversationRouter(config);
+      function conect(e) {
+        if (e) e.preventDefault();
+        let userInformation =  {
+          "user_ref":  "anonymous",
+          "name": "anonymous",
+          "role": "user",
+          "user_agent": navigator.userAgent,
+          "photo": "",
+        };
+        const intent =  url? url.replace(/^\/+|\/+$/g, ''): "hari-fall-treatment";
+        let userIntent = {
+          intent: intent
+        };
+  
+        GcConv.addUserIntent(userIntent);
+        GcConv.addUserInformation(userInformation);
+        GcConv.addRoomId(room_id);
+  
+        console.log("userInformation: ", userInformation)
+        console.log("userIntent: ", userIntent)
+        console.log("room id: ", room_id)
+  
+        GcConv.connect();
+      }
+  
+      window.addEventListener("DOMContentLoaded", () => {
+        user = {
+          user_ref: params.get('user_ref'),
+          name: params.get('name'),
+          role: "user",
+          photo: params.get('photo'),
+          user_agent: navigator.userAgent,
+        }
+        conect();
+      })
+    </script>
   </body>
 </html>
