@@ -72,7 +72,7 @@ const AppointmentBooking = () => {
   };
 
   return (
-    <div className="sm:bg-[#F5FAFE] bg-white py-10 sm:py-8">
+    <div className="sm:bg-[#F5FAFE] bg-white py-10 sm:py-8" id="appointment-booking">
       <div className=" bg-white shadow-md rounded-lg p-4 sm:p-8 max-w-6xl mx-4 sm:mx-auto my-6 sm:my-10 border font-roboto border-[#DEE2E6]">
         <div className="text-center mb-4 sm:mb-6">
           <h2 className="text-lg sm:text-xl font-bold text-[#231F20]">

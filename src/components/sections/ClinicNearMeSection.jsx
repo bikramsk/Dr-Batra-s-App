@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import clinicsData from '../../clinic.json';
-import BookingModal from '../custom/BookingModal';
+
 
 const SearchIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -116,11 +116,21 @@ const ClinicNearMeSection = () => {
   const [filteredClinics, setFilteredClinics] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+ 
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [slideDirection, setSlideDirection] = useState(null);
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 0);
   
+
+  const handleBookConsultation = () => {
+    const appointmentSection = document.getElementById('appointment-booking');
+    if (appointmentSection) {
+      appointmentSection.scrollIntoView({ 
+        behavior: 'smooth' 
+      });
+    }
+  };
+
   // Load data from JSON when component mounts
   useEffect(() => {
     try {
@@ -313,8 +323,7 @@ const ClinicNearMeSection = () => {
                 
                 <div className="mt-auto">
                   <button 
-                    className="block w-full bg-[#231F20] dark:bg-[#231F20] hover:bg-opacity-90 transition-all duration-200 text-white dark:text-white text-sm font-poppins font-bold py-2.5 text-center"
-                    onClick={() => setIsBookingModalOpen(true)}
+                    className="block w-full bg-[#231F20] dark:bg-[#231F20] hover:bg-opacity-90 transition-all duration-200 text-white dark:text-white text-sm font-poppins font-bold py-2.5 text-center" onClick={handleBookConsultation}
                   >
                     Book Consultation
                   </button>
@@ -380,8 +389,9 @@ const ClinicNearMeSection = () => {
                     } flex-shrink-0`}
                   >
                     <ClinicCard
-                      clinic={clinic}
-                      onBookConsultation={() => setIsBookingModalOpen(true)}
+                     clinic={clinic}
+                     onBookConsultation={handleBookConsultation}
+
                     />
                   </div>
                 ))}
@@ -422,14 +432,9 @@ const ClinicNearMeSection = () => {
           </button>
         </div>
         
-        {/* Booking Modal */}
-        <BookingModal 
-          isOpen={isBookingModalOpen}
-          onClose={() => setIsBookingModalOpen(false)}
-        />
+     
         
-        <style dangerouslySetInnerHTML={{ __html: `
-          .duration-300 {
+        <style dangerouslySetInnerHTML={{ __html: `          .duration-300 {
             transition-duration: 300ms;
           }
           
