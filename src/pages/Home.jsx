@@ -12,7 +12,7 @@ import ChatSection from '../components/sections/ChatSection';
 import HeroSection from '../components/sections/HeroSection';
 import BottomStats from '../components/sections/BottomStats';
 
-const Home = () => {
+const Home = ({ location }) => {
   return (
     <>
       <HeroSection />
@@ -25,7 +25,7 @@ const Home = () => {
       <HairFallStages />
       <DoctorSpeaks />
       <GoogleReviewSection />
-      <ClinicNearMeSection />
+      <ClinicNearMeSection location={location} />
       <ChatSection />
     </>
   );
